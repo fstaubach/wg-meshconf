@@ -4,7 +4,7 @@
 Name: Database Manager
 Creator: K4YT3X
 Date Created: July 19, 2020
-Last Modified: June 16, 2021
+Last Modified: May 16, 2023
 """
 
 import copy
@@ -55,6 +55,7 @@ PEER_ATTRIBUTES = [
 
 PEER_OPTIONAL_ATTRIBUTES = [
     "PersistentKeepalive",
+    "PresharedKey",
 ]
 
 KEY_TYPE = {
@@ -74,6 +75,7 @@ KEY_TYPE = {
     "PreDown": str,
     "PostDown": str,
     "SaveConfig": bool,
+    "PresharedKey": str,
 }
 
 
@@ -185,6 +187,7 @@ class DatabaseManager:
         PreDown: str = None,
         PostDown: str = None,
         SaveConfig: bool = None,
+        PresharedKey: str = None,
     ):
         database = self.read_database()
 
@@ -223,6 +226,7 @@ class DatabaseManager:
         PreDown: str = None,
         PostDown: str = None,
         SaveConfig: bool = None,
+        PresharedKey: str = None,
     ):
         database = self.read_database()
 
@@ -292,6 +296,7 @@ class DatabaseManager:
                     "ListenPort": "yellow",
                     "PrivateKey": "magenta",
                     "Endpoint": "green",
+                    "PresharedKey": "magenta",
                 }.get(field),
             )
 
